@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-693" y="80"/>
         </scene>
-        <!--First View Controller-->
+        <!--Authorization-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Authorization" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,8 +80,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="enterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZUF-io-Ijj"/>
-                                    <segue destination="EEI-iJ-w10" kind="show" id="jeS-sS-idm"/>
+                                    <action selector="enterButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R0p-Md-3de"/>
+                                    <segue destination="EEI-iJ-w10" kind="show" id="9GC-bF-T13"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите адрес электронной почты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3P-3F-u83">
@@ -110,8 +110,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7pp-7J-oBe"/>
                     <connections>
-                        <outlet property="emailTextfield" destination="WuY-8n-480" id="Iey-7S-RIm"/>
-                        <outlet property="passwordTextfield" destination="O3P-3F-u83" id="wDJ-9y-K9T"/>
+                        <outlet property="emailTextField" destination="WuY-8n-480" id="Iey-7S-RIm"/>
+                        <outlet property="passwordTextField" destination="O3P-3F-u83" id="wDJ-9y-K9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,7 +121,7 @@
         <!--Cafe Mario-->
         <scene sceneID="5oY-zC-FJ0">
             <objects>
-                <viewController storyboardIdentifier="secondViewController" id="EEI-iJ-w10" customClass="SecondViewController" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondViewController" id="EEI-iJ-w10" customClass="EnterParameters" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lSw-KE-wuH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +191,7 @@
                                 <rect key="frame" x="297" y="511" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="bookingActionSwitch:" destination="EEI-iJ-w10" eventType="valueChanged" id="g4z-oz-6Fm"/>
+                                    <action selector="bookingActionSwitchAction:" destination="EEI-iJ-w10" eventType="valueChanged" id="Mfa-m5-pyH"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Бронировали стол?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icR-Vn-egz">
@@ -206,7 +206,7 @@
                                 <rect key="frame" x="297" y="582" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="prepaymentSwitch:" destination="EEI-iJ-w10" eventType="valueChanged" id="ecm-6k-6L5"/>
+                                    <action selector="prepaymentActionSwitchAction:" destination="EEI-iJ-w10" eventType="valueChanged" id="Y3A-Qv-yHC"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Предоплата?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95d-wR-Pgw">
@@ -221,7 +221,7 @@
                                 <rect key="frame" x="297" y="650" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="vipActionSwitch:" destination="EEI-iJ-w10" eventType="valueChanged" id="vbN-3D-xzN"/>
+                                    <action selector="vipActionSwitchAction:" destination="EEI-iJ-w10" eventType="valueChanged" id="FxA-Qm-0Io"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIP комната?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlH-ej-U8r">
@@ -243,12 +243,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cafe Mario" id="iFc-GO-195"/>
                     <connections>
-                        <outlet property="bookingTableSwitch" destination="9gd-PS-3xM" id="vrH-aZ-AZM"/>
-                        <outlet property="countCustumersTextfield" destination="Jlv-zi-KZ9" id="Kxn-NQ-AZw"/>
-                        <outlet property="nameTextfield" destination="Hti-aZ-f6x" id="BEo-44-Sp5"/>
-                        <outlet property="numberTableTextfield" destination="q6K-w0-0c4" id="Q3L-ha-akH"/>
-                        <outlet property="prepaymentSwitch" destination="QPy-o2-3cj" id="gWF-9J-RbE"/>
-                        <outlet property="vipSwitch" destination="ECb-5Z-n1v" id="ZXQ-Da-CkC"/>
+                        <outlet property="bookingTableSwitch" destination="9gd-PS-3xM" id="Zmt-Jo-PeY"/>
+                        <outlet property="countCustumersTextField" destination="Jlv-zi-KZ9" id="Kxn-NQ-AZw"/>
+                        <outlet property="nameTextField" destination="Hti-aZ-f6x" id="BEo-44-Sp5"/>
+                        <outlet property="numberTableTextField" destination="q6K-w0-0c4" id="Q3L-ha-akH"/>
+                        <outlet property="prepaymentSwitch" destination="QPy-o2-3cj" id="jvp-2C-exp"/>
+                        <outlet property="vipSwitch" destination="ECb-5Z-n1v" id="6Yn-Zv-Pbj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eue-zg-yYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,7 +258,7 @@
         <!--Чек-->
         <scene sceneID="WXD-44-zK1">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" id="wET-kS-RaM" customClass="ThirdViewController" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewController" id="wET-kS-RaM" customClass="ShowCheck" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FqW-Az-4Xf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

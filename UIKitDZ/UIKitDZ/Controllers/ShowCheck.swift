@@ -7,8 +7,17 @@
 
 import UIKit
 
-/// Третий контроллер
-class ThirdViewController: UIViewController {
+/// Экран вывода чека
+class ShowCheck: UIViewController {
+    @IBOutlet weak var custumerLabel: UILabel!
+    @IBOutlet weak var tableNumberLabel: UILabel!
+    @IBOutlet weak var firstDishLabel: UILabel!
+    @IBOutlet weak var costFirstDishLabel: UILabel!
+    @IBOutlet weak var descriptionFirstDishLabel: UILabel!
+    @IBOutlet weak var secondDishLabel: UILabel!
+    @IBOutlet weak var costSecondDishLabel: UILabel!
+    @IBOutlet weak var descriptionSecondDishLabel: UILabel!
+    @IBOutlet weak var sumLabel: UILabel!
     
     var custumer = ""
     var tableNumber = ""
@@ -20,22 +29,12 @@ class ThirdViewController: UIViewController {
     var descriptionSecondDish = ""
     var sum = ""
     
-    @IBOutlet weak var custumerLabel: UILabel!
-    @IBOutlet weak var tableNumberLabel: UILabel!
-    @IBOutlet weak var firstDishLabel: UILabel!
-    @IBOutlet weak var costFirstDishLabel: UILabel!
-    @IBOutlet weak var descriptionFirstDishLabel: UILabel!
-    @IBOutlet weak var secondDishLabel: UILabel!
-    @IBOutlet weak var costSecondDishLabel: UILabel!
-    @IBOutlet weak var descriptionSecondDishLabel: UILabel!
-    @IBOutlet weak var sumLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureData()
+        configureLabel()
     }
     
-    private func configureData() {
+    private func configureLabel() {
         self.custumerLabel.text = self.custumer
         self.tableNumberLabel.text = tableNumber
         self.firstDishLabel.text = firstDish

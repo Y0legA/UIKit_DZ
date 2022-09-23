@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  SequreCustumer.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 22.09.22.
@@ -8,10 +8,9 @@
 import Foundation
 
 /// Данные для логина и пароля
-struct SecureData {
+struct Sequre {
     var login = "login"
     var password = "1111"
-    
 }
 /// Данные пользователей и логика скидок
 struct Custumer {
@@ -21,13 +20,13 @@ struct Custumer {
     var name = ""
     var count = ""
     var number = ""
-    var booking = false
-    var prepayment = false
-    var vip = false
+    var isBooking = false
+    var isPrepayment = false
+    var isVip = false
     
     func calculateOrder(_ key: String, _ guests: Int) -> (String, String?, Int) {
         let value = self.listOfOrders[key]
-        var sum = calculateDiscount(self.booking, self.prepayment, self.vip, key)
+        var sum = calculateDiscount(self.isBooking, self.isPrepayment, self.isVip, key)
         sum *= guests
         return (key, value?.0, sum)
     }
