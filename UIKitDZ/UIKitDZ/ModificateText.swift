@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// модель
-struct Model {
+/// Модель передаваемых данных
+struct ModificateText {
     var text: String?
     
     func changeText(_ text: String?) -> String? {
