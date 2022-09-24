@@ -135,7 +135,7 @@ class AddDetailsViewController: UIViewController {
     private let datePicker = UIDatePicker()
     private let agePickerView = UIPickerView()
     private let sexPickerView = UIPickerView()
-    private let sex = ["Мужской", "Женский"]
+    private let sex = ["Парень", "Девушка"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
