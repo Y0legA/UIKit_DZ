@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ReturnHelloViewController.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 21.09.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран с игрой "верни hello"
-class ReturnHello: UIViewController {
+class ReturnHelloViewController: UIViewController {
     
     private var textLabel = UILabel()
     private var beginButton = UIButton()
@@ -37,12 +37,12 @@ class ReturnHello: UIViewController {
         self.beginButton.frame = CGRect(x: 120, y: 100, width: 120, height: 30)
         self.beginButton.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         self.beginButton.setTitle("Begin", for: .normal)
-        self.beginButton.addTarget(self, action: #selector(startAlert), for: .touchUpInside)
+        self.beginButton.addTarget(self, action: #selector(startAlertAction), for: .touchUpInside)
         self.beginButton.layer.cornerRadius = 15
     }
     
     /// Приглашение для ввода слова
-    @objc func startAlert() {
+    @objc func startAlertAction() {
         let alertController = UIAlertController(title: "", message: "Enter the word", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { _ in
             guard let text = alertController.textFields?.first?.text  else { return }
