@@ -1,5 +1,5 @@
 //
-//  EnterParameters.swift
+//  EnterParametersViewController.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 22.09.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран выбора параметров
-class EnterParameters: UIViewController {
+class EnterParametersViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var countCustumersTextField: UITextField!
@@ -41,7 +41,7 @@ class EnterParameters: UIViewController {
         let alertController = UIAlertController(title: "Уходите?", message: "Выставить счет?", preferredStyle: .alert)
         let actionInvoice = UIAlertAction(title: "Счет", style: .default) { [weak self] _ in
             guard let destination = self?.storyboard?.instantiateViewController(withIdentifier: "ThirdViewController")
-                    as? ShowCheck else { return }
+                    as? ShowCheckViewController else { return }
             self?.navigationController?.pushViewController(destination, animated: true)
             self?.configureParametersProperties()
             destination.custumer = self?.nameTextField.text ?? ""

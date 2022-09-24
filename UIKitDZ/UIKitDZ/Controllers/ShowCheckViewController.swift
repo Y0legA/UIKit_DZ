@@ -1,5 +1,5 @@
 //
-//  ThirdViewController.swift
+//  ShowCheckViewController.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 22.09.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран вывода чека
-class ShowCheck: UIViewController {
+class ShowCheckViewController: UIViewController {
     @IBOutlet weak var custumerLabel: UILabel!
     @IBOutlet weak var tableNumberLabel: UILabel!
     @IBOutlet weak var firstDishLabel: UILabel!

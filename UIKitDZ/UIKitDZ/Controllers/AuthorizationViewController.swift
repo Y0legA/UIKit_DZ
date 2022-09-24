@@ -1,5 +1,5 @@
 //
-//  Authorization.swift
+//  AuthorizationViewController.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 21.09.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран ввода логина и пароля
-class Authorization: UIViewController {
+class AuthorizationViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -32,7 +32,7 @@ class Authorization: UIViewController {
         guard (self.emailTextField.text == secureData.login)
                 && (self.passwordTextField.text == secureData.password) else { return secureAlert() }
         if let target = storyboard?.instantiateViewController(withIdentifier: "secondViewController")
-            as? Authorization {
+            as? AuthorizationViewController {
             navigationController?.pushViewController(target, animated: true)
         }
     }
