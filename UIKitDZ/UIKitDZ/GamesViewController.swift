@@ -1,5 +1,5 @@
 //
-//  Games.swift
+//  GamesViewController.swift
 //  UIKitDZ
 //
 //  Created by Oleg_Yakovlev on 21.09.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Экран ввода имени, расчета суммы, с игрой "Угадай число"
-class Games: UIViewController {
+class GamesViewController: UIViewController {
     
     private var nameLabel = UILabel()
     private var resultSumLabel = UILabel()
@@ -54,7 +54,7 @@ class Games: UIViewController {
         self.guessNumberStartGameButton.frame = CGRect(x: 60, y: 200, width: 120, height: 30)
         self.guessNumberStartGameButton.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         self.guessNumberStartGameButton.setTitle("start game", for: .normal)
-        self.guessNumberStartGameButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
+        self.guessNumberStartGameButton.addTarget(self, action: #selector(startGameAction), for: .touchUpInside)
         self.guessNumberStartGameButton.layer.cornerRadius = 15
     }
     
@@ -63,7 +63,7 @@ class Games: UIViewController {
         self.tryGuessNumberButton.frame = CGRect(x: 220, y: 200, width: 80, height: 30)
         self.tryGuessNumberButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         self.tryGuessNumberButton.setTitle("try", for: .normal)
-        self.tryGuessNumberButton.addTarget(self, action: #selector(tryGuess), for: .touchUpInside)
+        self.tryGuessNumberButton.addTarget(self, action: #selector(tryGuessAction), for: .touchUpInside)
         self.tryGuessNumberButton.layer.cornerRadius = 15
     }
     
@@ -77,7 +77,7 @@ class Games: UIViewController {
         self.sumButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         self.sumButton.setTitle("calculate", for: .normal)
         self.sumButton.layer.cornerRadius = 15
-        self.sumButton.addTarget(self, action: #selector(alertNumberingNumbers), for: .touchUpInside)
+        self.sumButton.addTarget(self, action: #selector(alertNumberingNumbersAlert), for: .touchUpInside)
         self.sumButton.frame = CGRect(x: 135, y: 460, width: 100, height: 30)
     }
     
@@ -95,7 +95,7 @@ class Games: UIViewController {
     }
     
     /// Метод для обработки вводимых чисел
-    @objc func alertNumberingNumbers() {
+    @objc func alertNumberingNumbersAlert() {
         let alertController = UIAlertController(title: "Sum", message: "Enter the numbers...",
                                                 preferredStyle: .alert)
         let action = UIAlertAction(title: "Calculate", style: .default) { _ in
@@ -138,14 +138,14 @@ class Games: UIViewController {
     }
     
     /// Запуск игры "Угадай число"
-    @objc func startGame() {
+    @objc func startGameAction() {
         self.randomNumber = Int.random(in: 1...250)
         self.guessNumberStartGameButton.isUserInteractionEnabled = false
         self.guessNumberStartGameButton.isHidden = true
     }
     
     /// Попытка угадать число
-    @objc func tryGuess() {
+    @objc func tryGuessAction() {
         self.guessNumber()
     }
     
