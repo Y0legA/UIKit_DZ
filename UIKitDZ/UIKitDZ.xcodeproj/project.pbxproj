@@ -62,7 +62,7 @@
 			children = (
 				840B0C7C28DB0A950064679D /* AppDelegate.swift */,
 				840B0C7E28DB0A950064679D /* SceneDelegate.swift */,
-				841E760828DE15A50059713C /* Controllers */,
+				841E760828DE15A50059713C /* ViewControllers */,
 				840B0C8228DB0A950064679D /* Main.storyboard */,
 				840B0C8528DB0AA10064679D /* Assets.xcassets */,
 				840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */,
@@ -71,14 +71,14 @@
 			path = UIKitDZ;
 			sourceTree = "<group>";
 		};
-		841E760828DE15A50059713C /* Controllers */ = {
+		841E760828DE15A50059713C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				840B0C8028DB0A950064679D /* RegistrationViewController.swift */,
 				841E760428DE14B20059713C /* BirthdayViewController.swift */,
 				841E760628DE15720059713C /* AddDetailsViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

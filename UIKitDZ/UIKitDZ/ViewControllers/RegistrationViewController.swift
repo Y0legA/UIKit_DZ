@@ -90,7 +90,6 @@ class RegistrationViewController: UIViewController {
                                 width: 30,
                                 height: 60)
         switcher.tintColor = .gray
-        switcher.addTarget(self, action: #selector(switchFaceId), for: .touchDown)
         return switcher
     }()
     
@@ -114,20 +113,36 @@ class RegistrationViewController: UIViewController {
         configureUI()
     }
     
+    /// Метод для инвертирования глаза в поле ввода пароля
+    @objc private func eyeButtonToggle() {
+        if passwordTextField.isSecureTextEntry {
+            passwordTextField.isSecureTextEntry = false
+            eyeButton.setImage(UIImage(named: "eye_open"), for: .normal)
+        } else {
+            passwordTextField.isSecureTextEntry = true
+            eyeButton.setImage(UIImage(named: "eye_closed"), for: .normal)
+        }
+    }
+    
+    @objc private func transitionForNextViewController() {
+        let birthdayViewController = BirthdayViewController()
+        navigationController?.pushViewController(birthdayViewController, animated: true)
+    }
+    
     private func configureUI() {
-        self.view.backgroundColor = .white
-        self.view.addSubview(self.applicationNameLabel)
-        self.view.addSubview(self.sighInLabel)
-        self.view.addSubview(self.emailLabel)
-        self.view.addSubview(self.emailTextField)
-        self.configureTextField(self.emailTextField)
-        self.view.addSubview(self.passwordLabel)
-        self.view.addSubview(self.passwordTextField)
-        self.view.addSubview(self.eyeButton)
-        self.configureTextField(self.passwordTextField)
-        self.view.addSubview(self.faceIdLabel)
-        self.view.addSubview(self.faceIdSwith)
-        self.view.addSubview(self.transitionButton)
+        view.backgroundColor = .white
+        view.addSubview(applicationNameLabel)
+        view.addSubview(sighInLabel)
+        view.addSubview(emailLabel)
+        view.addSubview(emailTextField)
+        configureTextField(emailTextField)
+        view.addSubview(passwordLabel)
+        view.addSubview(passwordTextField)
+        view.addSubview(eyeButton)
+        configureTextField(passwordTextField)
+        view.addSubview(faceIdLabel)
+        view.addSubview(faceIdSwith)
+        view.addSubview(transitionButton)
     }
     
     /// Метод для отрисовки нижнего подчеркивания
@@ -139,24 +154,5 @@ class RegistrationViewController: UIViewController {
         bottomLine.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         textfield.borderStyle = UITextField.BorderStyle.none
         textfield.layer.addSublayer(bottomLine)
-    }
-    
-    /// Метод для инвертирования глаза в поле ввода пароля
-    @objc private func eyeButtonToggle() {
-        if self.passwordTextField.isSecureTextEntry {
-            self.passwordTextField.isSecureTextEntry = false
-            self.eyeButton.setImage(UIImage(named: "eye_open"), for: .normal)
-        } else {
-            self.passwordTextField.isSecureTextEntry = true
-            self.eyeButton.setImage(UIImage(named: "eye_closed"), for: .normal)
-        }
-    }
-    
-    @objc private func switchFaceId() {
-    }
-    
-    @objc private func transitionForNextViewController() {
-        let birthdayViewController = BirthdayViewController()
-        self.navigationController?.pushViewController(birthdayViewController, animated: true)
     }
 }

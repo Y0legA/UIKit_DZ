@@ -142,55 +142,77 @@ class AddDetailsViewController: UIViewController {
         configureUI()
     }
     
-    private func configureUI() {
-        self.configureSelfView()
-        self.configureTextField(self.nameTextField)
-        self.createDatePicker()
-        self.configureTextField(self.dataTextField)
-        self.configureAgePickerView()
-        self.configureSexPickerView()
-        self.configureTextField(self.ageTextField)
-        self.configureTextField(self.sexTextField)
-        self.configureTextField(self.instagramTextField)
-    }
-    
-    private func configureSelfView() {
-        self.view.backgroundColor = .white
-        self.view.addSubview(self.cancelButton)
-        self.view.addSubview(self.addButton)
-        self.view.addSubview(self.changeImageView)
-        self.view.addSubview(self.changeImageButton)
-        self.view.addSubview(self.nameLabel)
-        self.view.addSubview(self.nameTextField)
-        self.view.addSubview(self.dateLabel)
-        self.view.addSubview(self.dataTextField)
-        self.view.addSubview(self.ageLabel)
-        self.view.addSubview(self.ageTextField)
-        self.view.addSubview(self.sexLabel)
-        self.view.addSubview(self.sexTextField)
-        self.view.addSubview(self.instagramLabel)
-        self.view.addSubview(self.instagramTextField)
-    }
-    
     @objc private func cancelAction() {
-        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     @objc private func addDetailsAction() {
-        self.nameTextField.text = ""
-        self.dataTextField.text = ""
-        self.ageTextField.text = ""
-        self.sexTextField.text = ""
-        self.instagramTextField.text = ""
+        nameTextField.text = ""
+        dataTextField.text = ""
+        ageTextField.text = ""
+        sexTextField.text = ""
+        instagramTextField.text = ""
         let alertController = UIAlertController(title: "Данные сохранены", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(ok)
-        self.present(alertController, animated: true)
+        present(alertController, animated: true)
     }
     
     @objc private func changeFotoAction() {
         print("change foto")
+    }
+    
+    @objc private func datePickerButtonAction() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        dataTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc private func instagramAlertAction() {
+        let alertController = UIAlertController(title: "Введите логин", message: "", preferredStyle: .alert)
+        let alertControllerOkAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let text = alertController.textFields?.first?.text
+            guard let text = text else { return }
+            self.instagramTextField.text = text
+        }
+        let alertControllerCancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addTextField()
+        alertController.textFields?.first?.placeholder = "К примеру -- mario"
+        alertController.addAction(alertControllerOkAction)
+        alertController.addAction(alertControllerCancelAction)
+        present(alertController, animated: true)
+    }
+    
+    private func configureUI() {
+        configureSelfView()
+        configureTextField(nameTextField)
+        createDatePicker()
+        configureTextField(dataTextField)
+        configureAgePickerView()
+        configureSexPickerView()
+        configureTextField(ageTextField)
+        configureTextField(sexTextField)
+        configureTextField(instagramTextField)
+    }
+    
+    private func configureSelfView() {
+        view.backgroundColor = .white
+        view.addSubview(cancelButton)
+        view.addSubview(addButton)
+        view.addSubview(changeImageView)
+        view.addSubview(changeImageButton)
+        view.addSubview(nameLabel)
+        view.addSubview(nameTextField)
+        view.addSubview(dateLabel)
+        view.addSubview(dataTextField)
+        view.addSubview(ageLabel)
+        view.addSubview(ageTextField)
+        view.addSubview(sexLabel)
+        view.addSubview(sexTextField)
+        view.addSubview(instagramLabel)
+        view.addSubview(instagramTextField)
     }
     
     /// Метод для отрисовки нижнего подчеркивания
@@ -210,45 +232,23 @@ class AddDetailsViewController: UIViewController {
         let buttonToolBar = UIBarButtonItem(barButtonSystemItem: .done, target: nil,
                                             action: #selector(datePickerButtonAction))
         toolBar.setItems([buttonToolBar], animated: true)
-        self.dataTextField.inputAccessoryView = toolBar
-        self.dataTextField.inputView = self.datePicker
-        self.datePicker.datePickerMode = .dateAndTime
+        dataTextField.inputAccessoryView = toolBar
+        dataTextField.inputView = datePicker
+        datePicker.datePickerMode = .dateAndTime
         datePicker.locale = .init(identifier: "English")
         datePicker.preferredDatePickerStyle = .wheels
     }
     
-    @objc private func datePickerButtonAction() {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        dataTextField.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-    }
-    
     private func configureAgePickerView() {
-        self.agePickerView.tag = 0
-        self.agePickerView.delegate = self
-        self.agePickerView.dataSource = self
+        agePickerView.tag = 0
+        agePickerView.delegate = self
+        agePickerView.dataSource = self
     }
     
     private func configureSexPickerView() {
-        self.sexPickerView.tag = 1
-        self.sexPickerView.delegate = self
-        self.sexPickerView.dataSource = self
-    }
-    
-    @objc private func instagramAlertAction() {
-        let alertController = UIAlertController(title: "Введите логин", message: "", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { _ in
-            let text = alertController.textFields?.first?.text
-            guard let text = text else { return }
-            self.instagramTextField.text = text
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addTextField()
-        alertController.textFields?.first?.placeholder = "К примеру -- mario"
-        alertController.addAction(ok)
-        alertController.addAction(cancel)
-        self.present(alertController, animated: true)
+        sexPickerView.tag = 1
+        sexPickerView.delegate = self
+        sexPickerView.dataSource = self
     }
 }
 

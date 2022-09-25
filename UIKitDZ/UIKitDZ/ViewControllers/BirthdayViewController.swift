@@ -15,6 +15,12 @@ class BirthdayViewController: UIViewController {
         configureUI()
     }
     
+    @objc private func showDetailsAction() {
+        let detailsVC = AddDetailsViewController()
+        detailsVC.modalTransitionStyle = .flipHorizontal
+        present(detailsVC, animated: true)
+    }
+    
     private func configureUI() {
         configureSelfView()
         configureBlock(CGPoint(x: 10, y: 100), "Jeremy", days: "18 дней", "10 марта, в среду, исполнится 25 лет")
@@ -23,9 +29,9 @@ class BirthdayViewController: UIViewController {
     }
     
     private func configureSelfView() {
-        self.view.backgroundColor = .white
-        self.navigationItem.title = "Birthday"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+        view.backgroundColor = .white
+        navigationItem.title = "Birthday"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(showDetailsAction))
     }
@@ -34,14 +40,14 @@ class BirthdayViewController: UIViewController {
     private func configureBlock(_ origin: CGPoint, _ name: String, days: String, _ description: String) {
         let image = createImageView(origin)
         let name = createNameLabel(CGPoint(x: image.frame.maxX, y: image.frame.minY), name)
-        let day = createDayLabel(CGPoint(x: self.view.bounds.maxX - 80, y: name.frame.minY), days)
+        let day = createDayLabel(CGPoint(x: view.bounds.maxX - 80, y: name.frame.minY), days)
         let descriptionIvent = createDescriptionIventLabel(CGPoint(x: image.frame.maxX, y: name.frame.maxY),
                                                            description)
         configureBorderLine(descriptionIvent)
-        self.view.addSubview(image)
-        self.view.addSubview(name)
-        self.view.addSubview(day)
-        self.view.addSubview(descriptionIvent)
+        view.addSubview(image)
+        view.addSubview(name)
+        view.addSubview(day)
+        view.addSubview(descriptionIvent)
     }
     
     private func createImageView(_ origin: CGPoint) -> UIImageView {
@@ -76,7 +82,7 @@ class BirthdayViewController: UIViewController {
     private func createDescriptionIventLabel(_ origin: CGPoint, _ name: String) -> UILabel {
         let label = UILabel()
         label.tintColor = .lightGray
-        label.frame.size = CGSize(width: self.view.bounds.width - 90, height: 30)
+        label.frame.size = CGSize(width: view.bounds.width - 90, height: 30)
         label.frame.origin = origin
         label.text = name
         label.font = UIFont.init(name: "Avenir Next", size: 15)
@@ -92,11 +98,5 @@ class BirthdayViewController: UIViewController {
                                   width: label.bounds.width, height: 1.0)
         bottomLine.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         label.layer.addSublayer(bottomLine)
-    }
-    
-    @objc private func showDetailsAction() {
-        let details = AddDetailsViewController()
-        details.modalTransitionStyle = .flipHorizontal
-        self.present(details, animated: true)
     }
 }
