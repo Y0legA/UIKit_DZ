@@ -9,21 +9,55 @@
 /* Begin PBXBuildFile section */
 		840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7C28DB0A950064679D /* AppDelegate.swift */; };
 		840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7E28DB0A950064679D /* SceneDelegate.swift */; };
-		840B0C8128DB0A950064679D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C8028DB0A950064679D /* ViewController.swift */; };
+		840B0C8128DB0A950064679D /* ChooseGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C8028DB0A950064679D /* ChooseGoodViewController.swift */; };
 		840B0C8428DB0A950064679D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8228DB0A950064679D /* Main.storyboard */; };
 		840B0C8628DB0AA10064679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8528DB0AA10064679D /* Assets.xcassets */; };
 		840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */; };
+		8466CC8F28E1C2360074D13A /* New Era NEYYAN STN_3 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC8828E1C2350074D13A /* New Era NEYYAN STN_3 */; };
+		8466CC9028E1C2360074D13A /* New Era NEYYAN STN_1 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC8928E1C2350074D13A /* New Era NEYYAN STN_1 */; };
+		8466CC9128E1C2360074D13A /* New Era NEYYAN STN_2 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC8A28E1C2350074D13A /* New Era NEYYAN STN_2 */; };
+		8466CC9328E1C2360074D13A /* New Era LEAG BLACK_2 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC8C28E1C2360074D13A /* New Era LEAG BLACK_2 */; };
+		8466CC9528E1C2360074D13A /* New Era LEAG BLACK_1 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC8E28E1C2360074D13A /* New Era LEAG BLACK_1 */; };
+		8466CC9928E1C3F50074D13A /* New Era LEAG BLACK_3 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9828E1C3F50074D13A /* New Era LEAG BLACK_3 */; };
+		8466CCA128E1C7510074D13A /* League Essential Ney, Kappe Kinder_1 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9A28E1C7500074D13A /* League Essential Ney, Kappe Kinder_1 */; };
+		8466CCA228E1C7510074D13A /* League Essential Ney, Kappe Kinder_3 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9B28E1C7500074D13A /* League Essential Ney, Kappe Kinder_3 */; };
+		8466CCA328E1C7510074D13A /* League Essential Mütze Grün_2 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9C28E1C7500074D13A /* League Essential Mütze Grün_2 */; };
+		8466CCA428E1C7510074D13A /* League Essential Mütze Grün_3 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9D28E1C7500074D13A /* League Essential Mütze Grün_3 */; };
+		8466CCA628E1C7510074D13A /* League Essential Mütze Grün_1 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CC9F28E1C7500074D13A /* League Essential Mütze Grün_1 */; };
+		8466CCA728E1C7510074D13A /* League Essential Ney, Kappe Kinder_2 in Resources */ = {isa = PBXBuildFile; fileRef = 8466CCA028E1C7510074D13A /* League Essential Ney, Kappe Kinder_2 */; };
+		8466CCAA28E1C95D0074D13A /* AutorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466CCA928E1C95D0074D13A /* AutorizationViewController.swift */; };
+		8466CCAD28E1CB420074D13A /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466CCAC28E1CB420074D13A /* Extentions.swift */; };
+		8466CCAF28E1CBB50074D13A /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466CCAE28E1CBB50074D13A /* PayViewController.swift */; };
+		8466CCB328E1DA210074D13A /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466CCB228E1DA210074D13A /* Secure.swift */; };
+		8466CCB628E1E85F0074D13A /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466CCB528E1E85F0074D13A /* Goods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		840B0C7928DB0A950064679D /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B0C7C28DB0A950064679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B0C7E28DB0A950064679D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		840B0C8028DB0A950064679D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		840B0C8028DB0A950064679D /* ChooseGoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGoodViewController.swift; sourceTree = "<group>"; };
 		840B0C8328DB0A950064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840B0C8528DB0AA10064679D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840B0C8828DB0AA10064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840B0C8A28DB0AA10064679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8466CC8828E1C2350074D13A /* New Era NEYYAN STN_3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era NEYYAN STN_3"; sourceTree = "<group>"; };
+		8466CC8928E1C2350074D13A /* New Era NEYYAN STN_1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era NEYYAN STN_1"; sourceTree = "<group>"; };
+		8466CC8A28E1C2350074D13A /* New Era NEYYAN STN_2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era NEYYAN STN_2"; sourceTree = "<group>"; };
+		8466CC8C28E1C2360074D13A /* New Era LEAG BLACK_2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era LEAG BLACK_2"; sourceTree = "<group>"; };
+		8466CC8E28E1C2360074D13A /* New Era LEAG BLACK_1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era LEAG BLACK_1"; sourceTree = "<group>"; };
+		8466CC9828E1C3F50074D13A /* New Era LEAG BLACK_3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "New Era LEAG BLACK_3"; sourceTree = "<group>"; };
+		8466CC9A28E1C7500074D13A /* League Essential Ney, Kappe Kinder_1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Ney, Kappe Kinder_1"; sourceTree = "<group>"; };
+		8466CC9B28E1C7500074D13A /* League Essential Ney, Kappe Kinder_3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Ney, Kappe Kinder_3"; sourceTree = "<group>"; };
+		8466CC9C28E1C7500074D13A /* League Essential Mütze Grün_2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Mütze Grün_2"; sourceTree = "<group>"; };
+		8466CC9D28E1C7500074D13A /* League Essential Mütze Grün_3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Mütze Grün_3"; sourceTree = "<group>"; };
+		8466CC9F28E1C7500074D13A /* League Essential Mütze Grün_1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Mütze Grün_1"; sourceTree = "<group>"; };
+		8466CCA028E1C7510074D13A /* League Essential Ney, Kappe Kinder_2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "League Essential Ney, Kappe Kinder_2"; sourceTree = "<group>"; };
+		8466CCA928E1C95D0074D13A /* AutorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationViewController.swift; sourceTree = "<group>"; };
+		8466CCAC28E1CB420074D13A /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		8466CCAE28E1CBB50074D13A /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		8466CCB228E1DA210074D13A /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
+		8466CCB528E1E85F0074D13A /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +92,54 @@
 			children = (
 				840B0C7C28DB0A950064679D /* AppDelegate.swift */,
 				840B0C7E28DB0A950064679D /* SceneDelegate.swift */,
-				840B0C8028DB0A950064679D /* ViewController.swift */,
+				8466CCAB28E1CA3B0074D13A /* ViewControllers */,
+				8466CCB428E1E83D0074D13A /* Models */,
+				8466CCA828E1C7B90074D13A /* Goods */,
+				8466CCAC28E1CB420074D13A /* Extentions.swift */,
 				840B0C8228DB0A950064679D /* Main.storyboard */,
 				840B0C8528DB0AA10064679D /* Assets.xcassets */,
 				840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */,
 				840B0C8A28DB0AA10064679D /* Info.plist */,
 			);
 			path = UIKitDZ;
+			sourceTree = "<group>";
+		};
+		8466CCA828E1C7B90074D13A /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				8466CC9A28E1C7500074D13A /* League Essential Ney, Kappe Kinder_1 */,
+				8466CCA028E1C7510074D13A /* League Essential Ney, Kappe Kinder_2 */,
+				8466CC9B28E1C7500074D13A /* League Essential Ney, Kappe Kinder_3 */,
+				8466CC9F28E1C7500074D13A /* League Essential Mütze Grün_1 */,
+				8466CC9C28E1C7500074D13A /* League Essential Mütze Grün_2 */,
+				8466CC9D28E1C7500074D13A /* League Essential Mütze Grün_3 */,
+				8466CC8E28E1C2360074D13A /* New Era LEAG BLACK_1 */,
+				8466CC8C28E1C2360074D13A /* New Era LEAG BLACK_2 */,
+				8466CC9828E1C3F50074D13A /* New Era LEAG BLACK_3 */,
+				8466CC8928E1C2350074D13A /* New Era NEYYAN STN_1 */,
+				8466CC8A28E1C2350074D13A /* New Era NEYYAN STN_2 */,
+				8466CC8828E1C2350074D13A /* New Era NEYYAN STN_3 */,
+			);
+			path = Goods;
+			sourceTree = "<group>";
+		};
+		8466CCAB28E1CA3B0074D13A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8466CCA928E1C95D0074D13A /* AutorizationViewController.swift */,
+				840B0C8028DB0A950064679D /* ChooseGoodViewController.swift */,
+				8466CCAE28E1CBB50074D13A /* PayViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8466CCB428E1E83D0074D13A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8466CCB228E1DA210074D13A /* Secure.swift */,
+				8466CCB528E1E85F0074D13A /* Goods.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +201,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8466CCA128E1C7510074D13A /* League Essential Ney, Kappe Kinder_1 in Resources */,
 				840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */,
 				840B0C8628DB0AA10064679D /* Assets.xcassets in Resources */,
+				8466CC9328E1C2360074D13A /* New Era LEAG BLACK_2 in Resources */,
+				8466CC9528E1C2360074D13A /* New Era LEAG BLACK_1 in Resources */,
+				8466CC8F28E1C2360074D13A /* New Era NEYYAN STN_3 in Resources */,
+				8466CCA428E1C7510074D13A /* League Essential Mütze Grün_3 in Resources */,
+				8466CC9028E1C2360074D13A /* New Era NEYYAN STN_1 in Resources */,
+				8466CCA328E1C7510074D13A /* League Essential Mütze Grün_2 in Resources */,
+				8466CC9928E1C3F50074D13A /* New Era LEAG BLACK_3 in Resources */,
+				8466CCA728E1C7510074D13A /* League Essential Ney, Kappe Kinder_2 in Resources */,
+				8466CCA628E1C7510074D13A /* League Essential Mütze Grün_1 in Resources */,
+				8466CC9128E1C2360074D13A /* New Era NEYYAN STN_2 in Resources */,
 				840B0C8428DB0A950064679D /* Main.storyboard in Resources */,
+				8466CCA228E1C7510074D13A /* League Essential Ney, Kappe Kinder_3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +247,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840B0C8128DB0A950064679D /* ViewController.swift in Sources */,
+				840B0C8128DB0A950064679D /* ChooseGoodViewController.swift in Sources */,
+				8466CCAA28E1C95D0074D13A /* AutorizationViewController.swift in Sources */,
+				8466CCB628E1E85F0074D13A /* Goods.swift in Sources */,
+				8466CCAD28E1CB420074D13A /* Extentions.swift in Sources */,
 				840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */,
+				8466CCB328E1DA210074D13A /* Secure.swift in Sources */,
+				8466CCAF28E1CBB50074D13A /* PayViewController.swift in Sources */,
 				840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
