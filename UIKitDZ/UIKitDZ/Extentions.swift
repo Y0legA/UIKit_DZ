@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// Расширение с методом для отрисовки нижнего подчеркивания
 extension UIViewController {
     
     /// Метод для отрисовки нижнего подчеркивания
