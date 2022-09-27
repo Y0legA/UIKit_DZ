@@ -55,6 +55,24 @@ class ChooseGoodViewController: UIViewController {
         return textField
     }()
     
+    private lazy var methodPayLabel: UILabel = {
+        var label = UILabel()
+        label.textColor = .systemBlue
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.text = "cпособ оплаты - оплата картой"
+        label.frame = CGRect(x: view.frame.minX, y: sizeTextField.frame.maxY + 200, width: 370, height: 50)
+        label.center.x = view.center.x
+        return label
+    }()
+    
+    private lazy var methodPaySwitch: UISwitch = {
+        var paySwitch = UISwitch()
+        paySwitch.frame = CGRect(x: view.frame.width - 50, y: methodPayLabel.frame.minY + 10, width: 30, height: 20)
+        paySwitch.addTarget(self, action: #selector(changeMethodPay), for: .valueChanged)
+        return paySwitch
+    }()
+    
     private lazy var costGoodLabel: UILabel = {
         var label = UILabel()
         label.textColor = .systemBlue
@@ -67,7 +85,7 @@ class ChooseGoodViewController: UIViewController {
     private lazy var buyButton: UIButton = {
         var button = UIButton()
         button.frame = CGRect(x: 0,
-                              y: costGoodLabel.frame.maxY,
+                              y: methodPayLabel.frame.maxY,
                               width: sizeSegmentedControl.frame.width,
                               height: 50)
         button.center.x = view.center.x
@@ -124,9 +142,20 @@ class ChooseGoodViewController: UIViewController {
         }
     }
     
+    @objc private func changeMethodPay() {
+        if methodPaySwitch.isOn {
+            methodPaySwitch.isOn = true
+            methodPayLabel.text = "cпособ оплаты - наличными"
+        } else {
+            methodPaySwitch.isOn = false
+            methodPayLabel.text = "cпособ оплаты - картой"
+        }
+    }
+    
     @objc private func buyGood() {
         let buyVC = PayViewController()
         buyVC.cost = cost
+        buyVC.methodPay = methodPayLabel.text
         navigationController?.pushViewController(buyVC, animated: true)
     }
     
@@ -139,6 +168,8 @@ class ChooseGoodViewController: UIViewController {
         view.addSubview(sizeTextField)
         view.addSubview(choiceCurrentImageSlider)
         configureSizesPickerView()
+        view.addSubview(methodPayLabel)
+        view.addSubview(methodPaySwitch)
         view.addSubview(costGoodLabel)
         view.addSubview(buyButton)
     }

@@ -14,8 +14,9 @@ class PayViewController: UIViewController {
         label.textColor = .systemBlue
         label.font = UIFont(name: "Avenir Next", size: 20)
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.text = "Стоимость вашего заказа - \(cost)"
-        label.frame = CGRect(x: 0, y: 100, width: 400, height: 50)
+        label.text = "Стоимость вашего заказа - \(cost ?? ""), \(methodPay ?? "")"
+        label.numberOfLines = 0
+        label.frame = CGRect(x: 0, y: 100, width: 400, height: 60)
         label.textAlignment = .center
         label.center.x = view.center.x
         return label
@@ -36,7 +37,8 @@ class PayViewController: UIViewController {
         return button
     }()
     
-    var cost = ""
+    var cost: String?
+    var methodPay: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +52,14 @@ class PayViewController: UIViewController {
     }
     
     @objc private func buyAlertAction() {
-            let alertController = UIAlertController(title: "Оплатить \(cost)p?", message: "",
-                                                    preferredStyle: .alert)
-            let alertControllerOkAction = UIAlertAction(title: "Оk", style: .default) { _ in
-                self.costGoodLabel.text = "Спасибо за покупку!"
-            }
-            let alertControllerCancelAction = UIAlertAction(title: "Отменить оплату", style: .cancel)
-            alertController.addAction(alertControllerOkAction)
-            alertController.addAction(alertControllerCancelAction)
-            present(alertController, animated: true)
+        let alertController = UIAlertController(title: "Оплатить \(cost ?? "")p?", message: "",
+                                                preferredStyle: .alert)
+        let alertControllerOkAction = UIAlertAction(title: "Оk", style: .default) { _ in
+            self.costGoodLabel.text = "Спасибо за покупку!"
         }
+        let alertControllerCancelAction = UIAlertAction(title: "Отменить оплату", style: .cancel)
+        alertController.addAction(alertControllerOkAction)
+        alertController.addAction(alertControllerCancelAction)
+        present(alertController, animated: true)
+    }
 }
