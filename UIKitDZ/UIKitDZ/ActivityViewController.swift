@@ -22,18 +22,20 @@ class ActivityViewController: UIViewController {
         configurePickerView()
     }
     
-    private func configurePickerView() {
-        pickerView.delegate = self
-        pickerView.dataSource = self
+    @IBAction func shareAction() {
+        sharingByButtonAction()
     }
     
-    @IBAction func shareAction() { sharingByButton() }
-    
-    @objc private func sharingByButton() {
+    @objc private func sharingByButtonAction() {
         guard let item = sendImageView.image else { return }
         let activityViewController = UIActivityViewController(activityItems: [item], applicationActivities: nil)
         present(activityViewController, animated: true)
     }
+    
+    private func configurePickerView() {
+               pickerView.delegate = self
+               pickerView.dataSource = self
+           }
     
     private func sharingByPicker() {
         guard let link = URL(string: "https://mylink.com"), let text = urlLabel.text else { return }
