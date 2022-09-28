@@ -72,7 +72,7 @@ class AutorizationViewController: UIViewController {
                               width: 30,
                               height: 30)
         button.tintColor = .gray
-        button.addTarget(self, action: #selector(eyeButtonToggle), for: .touchDown)
+        button.addTarget(self, action: #selector(eyeButtonToggleAction), for: .touchDown)
         return button
     }()
     
@@ -87,7 +87,7 @@ class AutorizationViewController: UIViewController {
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(transitionForNextViewController), for: .touchDown)
+        button.addTarget(self, action: #selector(transitionForNextViewControllerAction), for: .touchDown)
         return button
     }()
     
@@ -97,30 +97,28 @@ class AutorizationViewController: UIViewController {
     }
     
     /// Метод для инвертирования глаза в поле ввода пароля
-    @objc private func eyeButtonToggle() {
-        if self.passwordTextField.isSecureTextEntry {
-            self.passwordTextField.isSecureTextEntry = false
-        } else {
-            self.passwordTextField.isSecureTextEntry = true
-        }
+    @objc private func eyeButtonToggleAction() {
+        guard passwordTextField.isSecureTextEntry else { return passwordTextField.isSecureTextEntry = true }
+            passwordTextField.isSecureTextEntry = false
     }
     
-    @objc private func transitionForNextViewController() {
-        func secureAlert() {
-            let alertController = UIAlertController(title: "Ошибка",
-                                                    message: "Введенные данные неверны",
-                                                    preferredStyle: .alert)
-            let action = UIAlertAction(title: "ОК", style: .cancel)
-            loginTextField.text = ""
-            passwordTextField.text = ""
-            alertController.addAction(action)
-            self.present(alertController, animated: true)
-        }
+    @objc private func transitionForNextViewControllerAction() {
         let secureData = Secure()
         guard (loginTextField.text == secureData.login)
-                && (self.passwordTextField.text == secureData.password) else { return secureAlert() }
+                && (passwordTextField.text == secureData.password) else { return secureAlert() }
         let goodsVC = ChooseGoodViewController()
         navigationController?.pushViewController(goodsVC, animated: true)
+    }
+    
+    private func secureAlert() {
+        let alertController = UIAlertController(title: "Ошибка",
+                                                message: "Введенные данные неверны",
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "ОК", style: .cancel)
+        loginTextField.text = ""
+        passwordTextField.text = ""
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
     
     private func configureUI() {

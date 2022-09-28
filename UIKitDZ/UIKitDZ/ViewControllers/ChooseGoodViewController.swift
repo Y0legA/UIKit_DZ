@@ -96,6 +96,7 @@ class ChooseGoodViewController: UIViewController {
         button.addTarget(self, action: #selector(buyGood), for: .touchDown)
         return button
     }()
+    
     private let sizesPickerView = UIPickerView()
     private let goods = Goods()
     private lazy var sizes = goods.sizes
@@ -120,7 +121,7 @@ class ChooseGoodViewController: UIViewController {
         configureUI()
     }
     
-    @objc func selectedGood(target: UISegmentedControl) {
+    @objc func selectedGoodAction(target: UISegmentedControl) {
         if target == sizeSegmentedControl {
             let segmentIndex = target.selectedSegmentIndex
             goodsKeys = goods.caps[segmentIndex].keys
@@ -134,7 +135,7 @@ class ChooseGoodViewController: UIViewController {
         }
     }
     
-    @objc private func chooseCurrentImage(sender: UISlider) {
+    @objc private func chooseCurrentImageAction(sender: UISlider) {
         if sender == choiceCurrentImageSlider {
             choiceCurrentImageSlider.minimumValue = 0
             choiceCurrentImageSlider.maximumValue = Float(goodsKeys?.count ?? 1) - 1
@@ -142,7 +143,7 @@ class ChooseGoodViewController: UIViewController {
         }
     }
     
-    @objc private func changeMethodPay() {
+    @objc private func changeMethodPayAction() {
         if methodPaySwitch.isOn {
             methodPaySwitch.isOn = true
             methodPayLabel.text = "cпособ оплаты - наличными"
@@ -152,7 +153,7 @@ class ChooseGoodViewController: UIViewController {
         }
     }
     
-    @objc private func buyGood() {
+    @objc private func buyGoodAction() {
         let buyVC = PayViewController()
         buyVC.cost = cost
         buyVC.methodPay = methodPayLabel.text
@@ -189,6 +190,7 @@ class ChooseGoodViewController: UIViewController {
     }
 }
 
+/// UIPickerViewDelegate, UIPickerViewDataSource
 extension ChooseGoodViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
