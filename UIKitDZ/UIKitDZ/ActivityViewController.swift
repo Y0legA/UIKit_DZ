@@ -44,6 +44,7 @@ class ActivityViewController: UIViewController {
     }
 }
 
+/// Расширение для реализации функций делегата и датасорса UIPicker
 extension ActivityViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
     
