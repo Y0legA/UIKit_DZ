@@ -8,24 +8,29 @@
 import UIKit
 
 /// Экран авторизации
-class AutorizationViewController: UIViewController, UITextFieldDelegate {
-
+final class AutorizationViewController: UIViewController {
+    private lazy var backgroundImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "background_1"))
+        imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        return imageView
+    }()
+    
     private lazy var pizzariyaLogoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "cloud")
-        imageView.frame = CGRect(x: 0, y: 50, width: 120, height: 80)
+        imageView.frame = CGRect(x: 0, y: 100, width: 160, height: 150)
         imageView.center.x = view.center.x
         return imageView
     }()
     
     private lazy var namePizzariyaLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: pizzariyaLogoImageView.frame.midY - 10, width: 70, height: 40))
+        let label = UILabel(frame: CGRect(x: 0, y: pizzariyaLogoImageView.frame.midY - 10, width: 100, height: 60))
         label.center.x = pizzariyaLogoImageView.center.x
-        label.text = "Titty Twister Pizza"
+        label.text = "Twister Pizza"
         label.textAlignment = .center
         label.textColor = .systemBlue
         label.numberOfLines = 0
-        label.font = UIFont(name: "Avenir Next", size: 12)
+        label.font = UIFont(name: "Avenir Next", size: 18)
         return label
     }()
     
@@ -33,7 +38,7 @@ class AutorizationViewController: UIViewController, UITextFieldDelegate {
         var label = UILabel()
         label.text = "Email"
         label.textColor = .systemBlue
-        label.font = UIFont(name: "Avenir Next", size: 12)
+        label.font = UIFont(name: "Avenir Next", size: 16)
         label.frame = CGRect(x: 60, y: pizzariyaLogoImageView.frame.maxY + 50, width: 50, height: 30)
         return label
     }()
@@ -49,7 +54,7 @@ class AutorizationViewController: UIViewController, UITextFieldDelegate {
         var label = UILabel()
         label.text = "Password"
         label.textColor = .systemBlue
-        label.font = UIFont(name: "Avenir Next", size: 12)
+        label.font = UIFont(name: "Avenir Next", size: 16)
         label.frame = CGRect(x: 60, y: emailTextField.frame.maxY + 40, width: 100, height: 30)
         return label
     }()
@@ -69,20 +74,20 @@ class AutorizationViewController: UIViewController, UITextFieldDelegate {
                               width: 30,
                               height: 30)
         button.tintColor = .gray
-        button.addTarget(self, action: #selector(eyeButtonToggle), for: .touchDown)
+        button.addTarget(self, action: #selector(eyeButtonToggleAction), for: .touchDown)
         return button
     }()
     
     private lazy var transitionButton: UIButton = {
         var button = UIButton()
         button.frame = CGRect(x: 0,
-                              y: passwordTextField.frame.maxY + 80,
+                              y: passwordTextField.frame.maxY + 130,
                               width: passwordTextField.frame.width,
-                              height: 40)
+                              height: 50)
         button.center.x = view.center.x
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.6582818627, green: 0.7757439017, blue: 0.9822301269, alpha: 1)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(enterButtonAction), for: .touchDown)
         return button
@@ -93,51 +98,53 @@ class AutorizationViewController: UIViewController, UITextFieldDelegate {
         configureUI()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     /// Метод для инвертирования глаза в поле ввода пароля
-    @objc private func eyeButtonToggle() {
+    @objc private func eyeButtonToggleAction() {
         guard passwordTextField.isSecureTextEntry else { return passwordTextField.isSecureTextEntry = true }
         passwordTextField.isSecureTextEntry = false
     }
     
-    @objc private func transitionForNextViewController() {
-        let chooseDishVC = ChooseDish()
-        navigationController?.pushViewController(chooseDishVC, animated: true)
+    @objc private func enterButtonAction() {
+        let secureData = Secure()
+        guard (self.emailTextField.text == secureData.login)
+                && (self.passwordTextField.text == secureData.password) else {
+            secureAlert()
+            return
+        }
+        let chooseDishVC = ChooseDishViewController()
+        let navigationVewController = UINavigationController(rootViewController: chooseDishVC)
+        navigationVewController.modalPresentationStyle = .fullScreen
+        present(navigationVewController, animated: true)
+        
     }
     
-    @objc private func enterButtonAction() {
-//        func secureAlert() {
-//            let alertController = UIAlertController(title: "Ошибка",
-//                                                    message: "Введенные данные неверны",
-//                                                    preferredStyle: .alert)
-//            let action = UIAlertAction(title: "ОК", style: .cancel)
-//            alertController.addAction(action)
-//            self.present(alertController, animated: true)
-//        }
-//        let secureData = Sequre()
-//        guard (self.emailTextField.text == secureData.login)
-//                && (self.passwordTextField.text == secureData.password) else { return secureAlert() }
-        let chooseDishVC = ChooseDish()
-        navigationController?.pushViewController(chooseDishVC, animated: true)
+    private func secureAlert() {
+        let alertController = UIAlertController(title: "Ошибка",
+                                                message: "Введенные данные неверны",
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "ОК", style: .cancel)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
     }
     
     private func configureUI() {
-        view.backgroundColor = .white
+        passwordTextField.delegate = self
+        configureSubwayViews()
+        configureTextField(emailTextField)
+        configureTextField(passwordTextField)
+    }
+    
+    private func configureSubwayViews() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(backgroundImageView)
         view.addSubview(pizzariyaLogoImageView)
         view.addSubview(namePizzariyaLabel)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
-        configureTextField(emailTextField)
         view.addSubview(passwordLabel)
         view.addSubview(passwordTextField)
         view.addSubview(eyeButton)
-        configureTextField(passwordTextField)
         view.addSubview(transitionButton)
-        passwordTextField.delegate = self
     }
     
     /// Метод для отрисовки нижнего подчеркивания
@@ -149,5 +156,13 @@ class AutorizationViewController: UIViewController, UITextFieldDelegate {
         bottomLine.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         textfield.borderStyle = UITextField.BorderStyle.none
         textfield.layer.addSublayer(bottomLine)
+    }
+}
+
+/// UITextFieldDelegate
+extension UIViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
