@@ -36,10 +36,10 @@ final class AutorizationViewController: UIViewController {
     
     private lazy var emailLabel: UILabel = {
         var label = UILabel()
-        label.text = "Email"
+        label.text = "Phone number"
         label.textColor = .systemBlue
         label.font = UIFont(name: "Avenir Next", size: 16)
-        label.frame = CGRect(x: 60, y: pizzariyaLogoImageView.frame.maxY + 50, width: 50, height: 30)
+        label.frame = CGRect(x: 60, y: pizzariyaLogoImageView.frame.maxY + 50, width: 120, height: 30)
         return label
     }()
     
