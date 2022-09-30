@@ -8,9 +8,9 @@
 import Foundation
 
 /// Описание пиццы
-struct PropertyOfPizza {
+struct PropertyPizza {
     let name: String
-    let image: String
+    let imageName: String
     let description: String
     let calorii: String
 }

@@ -15,17 +15,17 @@ final class ChoosePizzaViewController: UIViewController {
         return imageView
     }()
   
-    private let pizzas: [PropertyOfPizza] = [
-    PropertyOfPizza(name: "Деревенская", image: "derevenskaya",
+    private let pizzas: [PropertyPizza] = [
+    PropertyPizza(name: "Деревенская", imageName: "derevenskaya",
                     description: "Сервелат, бекон, карбонад, шампиньоны, соленые огурцы, лук зеленый, лук красный",
                     calorii: "калории - 218.61 ккал углеводы 22.03 г белки 9.74 г жиры 10.51 г"),
-    PropertyOfPizza(name: "Четыре сезона", image: "fourSeasons",
+    PropertyPizza(name: "Четыре сезона", imageName: "fourSeasons",
                     description: "Колбаса, ветчина, перец, помидоры, пармезан, морепродукты, твердый сыр, грибы",
                     calorii: "калории - 197.31 ккал, углеводы 21.85г, белки 10.01г, жиры 7.70г"),
-    PropertyOfPizza(name: "Маргарита", image: "margarita",
+    PropertyPizza(name: "Маргарита", imageName: "margarita",
                     description: "Томатная паста, оливковое масто, чеснок, соль, базилик, помидоры черри",
                     calorii: "калории - 201.27 ккал, углеводы 24.89г, белки 10.48г, жиры 6.72г"),
-    PropertyOfPizza(name: "Пепперони", image: "pepperoni",
+    PropertyPizza(name: "Пепперони", imageName: "pepperoni",
                     description: "Сырокопченая колбаса, оливковое масло, пер. чили, помидоры, орегано, базилик, чеснок",
                     calorii: "калории - 274.10 ккал, углеводы 23.78г, белки 12.08г, жиры 14.53г")
     ]
@@ -53,7 +53,7 @@ final class ChoosePizzaViewController: UIViewController {
     private func makeImages() {
         var yCoordinate: CGFloat = 100
         for (indexPizza, pizza) in pizzas.enumerated() {
-            let image = UIImageView(image: UIImage(named: pizza.image))
+            let image = UIImageView(image: UIImage(named: pizza.imageName))
             image.frame = CGRect(x: 10, y: yCoordinate, width: 70, height: 70)
             let label = UILabel(frame: CGRect(x: image.frame.maxX + 10,
                                               y: image.frame.minY + 15,

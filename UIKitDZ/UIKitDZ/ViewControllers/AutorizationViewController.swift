@@ -108,7 +108,7 @@ final class AutorizationViewController: UIViewController {
         let secureData = Secure()
         guard (self.emailTextField.text == secureData.login)
                 && (self.passwordTextField.text == secureData.password) else {
-            secureAlert()
+            createSecureAlert()
             return
         }
         let chooseDishVC = ChooseDishViewController()
@@ -118,7 +118,7 @@ final class AutorizationViewController: UIViewController {
         
     }
     
-    private func secureAlert() {
+    private func createSecureAlert() {
         let alertController = UIAlertController(title: "Ошибка",
                                                 message: "Введенные данные неверны",
                                                 preferredStyle: .alert)

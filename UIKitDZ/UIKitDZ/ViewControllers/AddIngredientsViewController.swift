@@ -23,7 +23,7 @@ final class AddIngredientsViewController: UIViewController {
     }()
     
     private lazy var pizzaImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: pizzaProperty?.image ?? ""))
+        let imageView = UIImageView(image: UIImage(named: pizzaProperty?.imageName ?? ""))
         imageView.frame = CGRect(x: 0, y: namePizzaLabel.frame.maxY + 30, width: 300, height: 300)
         imageView.center.x = view.center.x
         return imageView
@@ -114,7 +114,7 @@ final class AddIngredientsViewController: UIViewController {
     }()
     
     weak var delegate: PopToRootVC?
-    var pizzaProperty: PropertyOfPizza?
+    var pizzaProperty: PropertyPizza?
     var index = 0
    
     override func viewDidLoad() {
