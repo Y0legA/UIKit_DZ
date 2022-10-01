@@ -6,13 +6,16 @@
 //
 
 import UIKit
+
 /// Экран таймера
-class TimerViewController: UIViewController {
+final class TimerViewController: UIViewController {
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var timerPickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
 
-    // MARK: - lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -29,7 +32,6 @@ class TimerViewController: UIViewController {
 
 // MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         3
     }
