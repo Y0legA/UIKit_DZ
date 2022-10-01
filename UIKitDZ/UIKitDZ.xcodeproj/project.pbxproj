@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7C28DB0A950064679D /* AppDelegate.swift */; };
 		840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7E28DB0A950064679D /* SceneDelegate.swift */; };
-		840B0C8128DB0A950064679D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C8028DB0A950064679D /* ViewController.swift */; };
 		840B0C8428DB0A950064679D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8228DB0A950064679D /* Main.storyboard */; };
 		840B0C8628DB0AA10064679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8528DB0AA10064679D /* Assets.xcassets */; };
 		840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */; };
+		841DD13928E884260056DACF /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DD13828E884260056DACF /* TimerViewController.swift */; };
+		84C6316128E75B2B006A16CF /* GlobalClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6315F28E75B2B006A16CF /* GlobalClock.storyboard */; };
+		84C6316328E75B60006A16CF /* AlarmClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6316228E75B60006A16CF /* AlarmClock.storyboard */; };
+		84C6316628E75BE5006A16CF /* StopWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6316428E75BE5006A16CF /* StopWatch.storyboard */; };
+		84C6316828E75C0B006A16CF /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C6316728E75C0B006A16CF /* Timer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		840B0C7928DB0A950064679D /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B0C7C28DB0A950064679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B0C7E28DB0A950064679D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		840B0C8028DB0A950064679D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		840B0C8328DB0A950064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840B0C8528DB0AA10064679D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840B0C8828DB0AA10064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840B0C8A28DB0AA10064679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841DD13828E884260056DACF /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		84C6316028E75B2B006A16CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UIKitDZ/Base.lproj/GlobalClock.storyboard; sourceTree = "<group>"; };
+		84C6316228E75B60006A16CF /* AlarmClock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlarmClock.storyboard; sourceTree = "<group>"; };
+		84C6316528E75BE5006A16CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UIKitDZ/Base.lproj/StopWatch.storyboard; sourceTree = "<group>"; };
+		84C6316728E75C0B006A16CF /* Timer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,12 @@
 			children = (
 				840B0C7C28DB0A950064679D /* AppDelegate.swift */,
 				840B0C7E28DB0A950064679D /* SceneDelegate.swift */,
-				840B0C8028DB0A950064679D /* ViewController.swift */,
+				841DD13828E884260056DACF /* TimerViewController.swift */,
 				840B0C8228DB0A950064679D /* Main.storyboard */,
+				84C6315F28E75B2B006A16CF /* GlobalClock.storyboard */,
+				84C6316228E75B60006A16CF /* AlarmClock.storyboard */,
+				84C6316428E75BE5006A16CF /* StopWatch.storyboard */,
+				84C6316728E75C0B006A16CF /* Timer.storyboard */,
 				840B0C8528DB0AA10064679D /* Assets.xcassets */,
 				840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */,
 				840B0C8A28DB0AA10064679D /* Info.plist */,
@@ -128,7 +140,11 @@
 			files = (
 				840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */,
 				840B0C8628DB0AA10064679D /* Assets.xcassets in Resources */,
+				84C6316628E75BE5006A16CF /* StopWatch.storyboard in Resources */,
+				84C6316328E75B60006A16CF /* AlarmClock.storyboard in Resources */,
+				84C6316128E75B2B006A16CF /* GlobalClock.storyboard in Resources */,
 				840B0C8428DB0A950064679D /* Main.storyboard in Resources */,
+				84C6316828E75C0B006A16CF /* Timer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840B0C8128DB0A950064679D /* ViewController.swift in Sources */,
 				840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */,
+				841DD13928E884260056DACF /* TimerViewController.swift in Sources */,
 				840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +199,22 @@
 				840B0C8828DB0AA10064679D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84C6315F28E75B2B006A16CF /* GlobalClock.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C6316028E75B2B006A16CF /* Base */,
+			);
+			name = GlobalClock.storyboard;
+			sourceTree = "<group>";
+		};
+		84C6316428E75BE5006A16CF /* StopWatch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C6316528E75BE5006A16CF /* Base */,
+			);
+			name = StopWatch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
