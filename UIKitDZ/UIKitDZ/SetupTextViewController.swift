@@ -23,7 +23,7 @@ final class SetupTextViewController: UIViewController {
         static let lines = Array(0...10)
     }
     
-    // MARK: - Visual Components
+    // MARK: - Private Visual Components
     private lazy var eddedTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20,
@@ -131,7 +131,7 @@ final class SetupTextViewController: UIViewController {
         configureUI()
     }
     
-    // MARK: - IBAction
+    // MARK: - Private IBAction
     @objc private func addTextAction() {
         let alertViewController = UIAlertController(title: "Введите текст", message: nil, preferredStyle: .alert)
         alertViewController.addTextField()
