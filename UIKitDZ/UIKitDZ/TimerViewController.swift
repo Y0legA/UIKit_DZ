@@ -10,9 +10,9 @@ import UIKit
 /// Экран таймера
 final class TimerViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var timerPickerView: UIPickerView!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak private var timerPickerView: UIPickerView!
+    @IBOutlet weak private var cancelButton: UIButton!
+    @IBOutlet weak private var startButton: UIButton!
     
     // MARK: - Private Properties
     private var timer: Timer?
@@ -27,11 +27,11 @@ final class TimerViewController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func startAction(_ sender: Any) {
+    @IBAction private func startAction(_ sender: Any) {
         timerToggle()
     }
     
-    @IBAction func stopAction(_ sender: Any) {
+    @IBAction private func stopAction(_ sender: Any) {
         timer?.invalidate()
     }
     
