@@ -8,11 +8,11 @@
 import Foundation
 /// Структура для хранения данных
 struct CommonCustumerDefaults {
-    private init() {}
-    
     private enum Keys: String {
         case custumers
     }
+    
+    private init() {}
     
     static var custumers: [CustumerInfo] {
         get {

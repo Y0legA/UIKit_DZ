@@ -11,7 +11,7 @@ final class RegistrationViewController: UIViewController {
     // MARK: - Private IBOutlet
     @IBOutlet private weak var nameUserTextField: UITextField!
     @IBOutlet private weak var phoneNumberTextField: UITextField!
-    @IBOutlet private weak var birthdayDayTextfield: UITextField!
+    @IBOutlet private weak var birthdayDayTextField: UITextField!
     @IBOutlet private weak var loginTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     
@@ -27,7 +27,7 @@ final class RegistrationViewController: UIViewController {
     @IBAction private func addNewCustumerAction(_ sender: Any) {
         custumerInfo.nameUser = nameUserTextField.text ?? ""
         custumerInfo.phoneNumber = phoneNumberTextField.text ?? ""
-        custumerInfo.birthday = birthdayDayTextfield.text ?? ""
+        custumerInfo.birthday = birthdayDayTextField.text ?? ""
         custumerInfo.login = loginTextField.text ?? ""
         custumerInfo.password = passwordTextField.text ?? ""
         CommonCustumerDefaults.addCustumer(custumerInfo)
@@ -42,7 +42,7 @@ final class RegistrationViewController: UIViewController {
     private func configureTextFields() {
         nameUserTextField.delegate = self
         phoneNumberTextField.delegate = self
-        birthdayDayTextfield.delegate = self
+        birthdayDayTextField.delegate = self
         loginTextField.delegate = self
         passwordTextField.delegate = self
         NotificationCenter.default.addObserver(forName: UITextField.keyboardDidShowNotification,

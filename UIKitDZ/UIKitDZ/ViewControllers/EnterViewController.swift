@@ -7,7 +7,7 @@
 
 import UIKit
 /// Экран авторизации
-class EnterViewController: UIViewController {
+final class EnterViewController: UIViewController {
     // MARK: - Private IBOutlet
     @IBOutlet private weak var loginTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -38,6 +38,7 @@ class EnterViewController: UIViewController {
         targetVC.nameCustumer = custumer.nameUser
         navigationController?.pushViewController(targetVC, animated: true)
     }
+    
     @IBAction private func registerButtonAction(_ sender: Any) {
         guard let targetVC = storyboard?.instantiateViewController(withIdentifier: "registrationViewController")
                 as? RegistrationViewController else { return }

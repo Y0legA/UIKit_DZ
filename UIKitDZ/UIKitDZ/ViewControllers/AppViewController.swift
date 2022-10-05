@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// Экран приложения
+// Экран приложения бензоколонки
 class AppViewController: UIViewController {
     private enum Constants {
         static let hi = "Привет "
@@ -26,7 +26,7 @@ class AppViewController: UIViewController {
     @IBOutlet private weak var resultSumPayLabel: UILabel!
     @IBOutlet private weak var countFuelLabel: UILabel!
     @IBOutlet private weak var goodWayLabel: UILabel!
-    @IBOutlet private weak var chooseGoodWay: UIPickerView!
+    @IBOutlet private weak var chooseGoodWayPickerView: UIPickerView!
     @IBOutlet private weak var payLabel: UILabel!
     @IBOutlet private weak var cardLabel: UILabel!
     @IBOutlet private weak var cashLabel: UILabel!
@@ -54,17 +54,8 @@ class AppViewController: UIViewController {
         resultSumPayLabel.text = "\(Constants.forPay) \(resultSum ?? 0) "
     }
     
-    @IBAction private func chooseFuel(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            costFuel = Constants.costFuel[0]
-        case 1:
-            costFuel = Constants.costFuel[1]
-        case 2:
-            costFuel = Constants.costFuel[2]
-        default:
-            return
-        }
+    @IBAction private func chooseFuelAction(_ sender: UISegmentedControl) {
+        Constants.costFuel[sender.selectedSegmentIndex]
     }
     
     @IBAction private func cardSwitchAction(_ sender: UISwitch) {
@@ -101,7 +92,7 @@ class AppViewController: UIViewController {
     // MARK: - Private Methods
     private func configureUI() {
         nameCustumerLabel.text = "\(Constants.hi) \(nameCustumer)"
-        chooseGoodWay.delegate = self
+        chooseGoodWayPickerView.delegate = self
     }
 }
 
