@@ -15,7 +15,7 @@
 		840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */; };
 		8440BFB428EC4C010047B5CB /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440BFB328EC4C010047B5CB /* BookReaderViewController.swift */; };
 		8440BFB628EC4C830047B5CB /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440BFB528EC4C830047B5CB /* BookInfo.swift */; };
-		8446837B28ECDAC500DFBBE9 /* Extention+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446837A28ECDAC500DFBBE9 /* Extention+UIFont.swift */; };
+		8446837B28ECDAC500DFBBE9 /* UIFont+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446837A28ECDAC500DFBBE9 /* UIFont+Extention.swift */; };
 		847FD3B828ECA85000DFF52E /* SettingsTextReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FD3B728ECA85000DFF52E /* SettingsTextReader.swift */; };
 		847FD3BA28ECA94800DFF52E /* ReaderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FD3B928ECA94800DFF52E /* ReaderSettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		840B0C8A28DB0AA10064679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8440BFB328EC4C010047B5CB /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderViewController.swift; sourceTree = "<group>"; };
 		8440BFB528EC4C830047B5CB /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
-		8446837A28ECDAC500DFBBE9 /* Extention+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+UIFont.swift"; sourceTree = "<group>"; };
+		8446837A28ECDAC500DFBBE9 /* UIFont+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extention.swift"; sourceTree = "<group>"; };
 		847FD3B728ECA85000DFF52E /* SettingsTextReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextReader.swift; sourceTree = "<group>"; };
 		847FD3B928ECA94800DFF52E /* ReaderSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 				8440BFB528EC4C830047B5CB /* BookInfo.swift */,
 				8446837C28ECDBE800DFBBE9 /* Models */,
 				847FD3B728ECA85000DFF52E /* SettingsTextReader.swift */,
-				8446837A28ECDAC500DFBBE9 /* Extention+UIFont.swift */,
+				8446837A28ECDAC500DFBBE9 /* UIFont+Extention.swift */,
 				840B0C8228DB0A950064679D /* Main.storyboard */,
 				840B0C8528DB0AA10064679D /* Assets.xcassets */,
 				840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */,
@@ -198,7 +198,7 @@
 				8440BFB428EC4C010047B5CB /* BookReaderViewController.swift in Sources */,
 				847FD3B828ECA85000DFF52E /* SettingsTextReader.swift in Sources */,
 				840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */,
-				8446837B28ECDAC500DFBBE9 /* Extention+UIFont.swift in Sources */,
+				8446837B28ECDAC500DFBBE9 /* UIFont+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
