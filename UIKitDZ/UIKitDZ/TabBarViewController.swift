@@ -11,6 +11,8 @@ import UIKit
 final class TabBarViewController: UITabBarController {
     private enum Constants {
         static let titles = ["Storydoard", "Code NSConstraint", "Code NSLAnchor", "Code Stack View", "VFL"]
+        static let main = "Main"
+        static let identifier = "firstTrafficLightViewController"
     }
     
     // MARK: - Private Visual Components
@@ -27,8 +29,8 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Private Methods
     private func configureControllers() {
         tabBar.unselectedItemTintColor = .systemGray2
-        let firstViewController = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "firstTrafficLightViewController")
+        let firstViewController = UIStoryboard(name: Constants.main, bundle: nil)
+            .instantiateViewController(withIdentifier: Constants.identifier)
         viewControllers = [firstViewController
                            , secondTrafficLightViewController
                            , thirdTrafficLightViewController
