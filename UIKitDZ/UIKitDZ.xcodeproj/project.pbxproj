@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7C28DB0A950064679D /* AppDelegate.swift */; };
 		840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C7E28DB0A950064679D /* SceneDelegate.swift */; };
-		840B0C8128DB0A950064679D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C8028DB0A950064679D /* ViewController.swift */; };
+		840B0C8128DB0A950064679D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B0C8028DB0A950064679D /* TabBarViewController.swift */; };
 		840B0C8428DB0A950064679D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8228DB0A950064679D /* Main.storyboard */; };
 		840B0C8628DB0AA10064679D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8528DB0AA10064679D /* Assets.xcassets */; };
 		840B0C8928DB0AA10064679D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */; };
+		84AAAFB928F971B00098B3DB /* SecondTrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAFB828F971B00098B3DB /* SecondTrafficLightViewController.swift */; };
+		84AAAFBB28F971C30098B3DB /* ThirdTrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAFBA28F971C30098B3DB /* ThirdTrafficLightViewController.swift */; };
+		84AAAFBD28F971D70098B3DB /* FourthTrafficLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAFBC28F971D70098B3DB /* FourthTrafficLightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		840B0C7928DB0A950064679D /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B0C7C28DB0A950064679D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840B0C7E28DB0A950064679D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		840B0C8028DB0A950064679D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		840B0C8028DB0A950064679D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		840B0C8328DB0A950064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		840B0C8528DB0AA10064679D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840B0C8828DB0AA10064679D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840B0C8A28DB0AA10064679D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84AAAFB828F971B00098B3DB /* SecondTrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTrafficLightViewController.swift; sourceTree = "<group>"; };
+		84AAAFBA28F971C30098B3DB /* ThirdTrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTrafficLightViewController.swift; sourceTree = "<group>"; };
+		84AAAFBC28F971D70098B3DB /* FourthTrafficLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthTrafficLightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				840B0C7C28DB0A950064679D /* AppDelegate.swift */,
 				840B0C7E28DB0A950064679D /* SceneDelegate.swift */,
-				840B0C8028DB0A950064679D /* ViewController.swift */,
+				840B0C8028DB0A950064679D /* TabBarViewController.swift */,
+				84AAAFB828F971B00098B3DB /* SecondTrafficLightViewController.swift */,
+				84AAAFBA28F971C30098B3DB /* ThirdTrafficLightViewController.swift */,
+				84AAAFBC28F971D70098B3DB /* FourthTrafficLightViewController.swift */,
 				840B0C8228DB0A950064679D /* Main.storyboard */,
 				840B0C8528DB0AA10064679D /* Assets.xcassets */,
 				840B0C8728DB0AA10064679D /* LaunchScreen.storyboard */,
@@ -160,9 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840B0C8128DB0A950064679D /* ViewController.swift in Sources */,
+				84AAAFBD28F971D70098B3DB /* FourthTrafficLightViewController.swift in Sources */,
+				840B0C8128DB0A950064679D /* TabBarViewController.swift in Sources */,
 				840B0C7D28DB0A950064679D /* AppDelegate.swift in Sources */,
 				840B0C7F28DB0A950064679D /* SceneDelegate.swift in Sources */,
+				84AAAFB928F971B00098B3DB /* SecondTrafficLightViewController.swift in Sources */,
+				84AAAFBB28F971C30098B3DB /* ThirdTrafficLightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
